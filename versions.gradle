@@ -1,0 +1,184 @@
+ext.deps = [:]
+
+def deps = [:]
+
+def versions = [:]
+
+versions.kotlinCoroutines = "1.4.1"     // updated in 2020/11/10
+versions.kotlinCoreKtx = "1.3.2"        // updated in 2020/10/13
+versions.ktor = "1.4.0"                 // added in 2020/11/30
+
+versions.androidX = "1.2.0"             // updated in 2020/08/31
+// needed for glide
+versions.annotationX = "1.1.0"
+versions.transitionX = "1.3.1"
+
+versions.materialX = "1.2.1"            // updated in 2020/10/08
+versions.viewpagerX = "1.0.0"
+versions.viewpager2X = "1.0.0"
+versions.recyclerviewX = "1.1.0"
+versions.cardviewX = "1.0.0"
+versions.swiperefreshlayout = "1.1.0"   // added in 2020/08/11
+versions.vectorDrawableX = "1.1.0"
+
+versions.dataStore = '1.0.0-alpha05'    // added in 2020/12/09
+versions.protobuf = '3.14.0'            // added in 2020/12/09
+
+versions.constraintLayoutX = "2.0.4"    // updated in 2020/12/02
+
+versions.fragmentX = "1.2.5"            // updated in 2020/07/01
+versions.lifecycleX = "2.2.0"
+versions.roomX = "2.2.6"                // updated in 2021/01/20
+versions.architecture = "2.1.0"         // updated in 2021/01/20
+
+//versions.cameraX = "1.0.0-beta10"     // added in 2020/10/14
+versions.cameraX = "1.0.0-SNAPSHOT"     // added in 2020/10/14
+
+// ML Kit
+versions.mlkitBarcodeScanning = "16.0.3"        // added in 2020/10/20
+versions.mlkitObjectDetection = "16.2.1"        // added in 2020/10/20
+versions.mlkitObjectDetectionCustom = "16.2.1"  // added in 2020/10/20
+versions.mlkitFaceDetection = "16.2.1"          // added in 2020/10/20
+versions.mlkitImageLabeling = "17.0.0"          // added in 2020/10/20
+versions.mlkitImageLabelingAutoml = "16.2.1"    // added in 2020/10/20
+versions.mlkitImageLabelingCustom = "16.2.1"    // added in 2020/10/20
+versions.mlkitPoseDetection = "17.0.0"          // added in 2020/10/20
+versions.mlkitPoseDetectionAccurate = "17.0.0"  // added in 2020/10/20
+
+versions.workManager = "2.3.4"
+
+versions.flexbox = "1.1.1"
+versions.flexbox2 = "2.0.1"
+
+versions.firebaseCore = "18.0.0"            // updated in 2020/11/09
+versions.firebaseAuth = "20.0.0"            // updated in 2020/11/09
+versions.firebaseMessaging = "17.5.0"
+versions.firebaseAnalytics = "17.4.0"       // added in 2020/04/28
+versions.firebaseCrashlytics = "17.3.0"     // updated in 2020/12/02
+
+//https://developers.google.com/android/guides/setup
+versions.googlePlayCore = "1.8.3"           // added in 2020/08/27, updated in 2020/11/09
+versions.googleMobileAds = "16.0.0"
+versions.googleAnalytics = "16.0.4"
+versions.googleAuth = "18.1.0"              // added in 2020/08/31
+versions.googleLocation = "17.0.0"          // added in 2020/08/31
+versions.googleCloudMessaging = "17.0.0"    // added in 2020/08/31
+
+versions.rxJava2 = "2.2.11"
+versions.rxAndroid2 = "2.1.1"
+versions.rxJava3Extensions = "3.0.1"        // added in 2020/08/24
+
+versions.okHttp3 = "3.14.2"
+versions.okHttp4 = "4.2.0"
+
+versions.retrofit2 = "2.9.0"                // updated in 2020/07/15
+
+versions.dagger2 = "2.28.3"                 // added in 2020/07/29
+
+versions.apacheCommonsNet = "3.6"
+
+versions.seancfoleyIpaddress5 = "5.3.1"     // added in 2020/07/15
+versions.seancfoleyIpaddress4 = "4.3.3"     // added in 2020/07/15
+
+versions.glide = "4.10.0"
+
+versions.gson = "2.8.5"
+versions.moshi = "1.9.3"                    // updated in 2020/11/10
+
+versions.facebook8 = "8.0.0"            // added in 2020/10/14
+
+versions.twitter = "3.3.0"
+
+versions.crashlytics = "2.10.1"
+versions.fabricTool = "1.31.0"
+
+versions.flurry = "8.2.0"
+
+versions.photoView = "1.3.0"
+
+versions.leakcanary = "1.6.1"
+
+versions.zxing = "3.3.0"
+
+versions.socketIO = "1.0.0"
+
+versions.atAAR = "@aar"
+
+//https://developer.android.com/training/testing/set-up-project
+versions.junit = "4.13"                 // updated in 2020/07/20
+versions.testCore = "1.3.0"             // updated in 2020/09/14
+versions.testRunner = "1.3.0"           // updated in 2020/08/27
+versions.testRules = "1.3.0"            // updated in 2020/08/27
+versions.testExtensionJUnit = "1.1.2"   // updated in 2020/09/14
+versions.testExtensionTruth = "1.3.0"   // updated in 2020/09/14
+versions.espresso = "3.3.0"             // updated in 2020/08/27
+versions.mockito = "1.10.19"            // added in 2020/08/27
+versions.mockito2 = "2.10.0"            // added in 2020/08/27
+versions.googleTruth = "0.42"           // updated in 2020/09/14
+
+
+// next would be 2 (2019/03/18)
+versions.versionCode = 1
+// next might be
+versions.versionName = "0.0.1"
+
+versions.minSdk = 24 //updated in 2020/07/15
+versions.compileSdk = 30 //updated in 2020/07/15
+versions.targetSdk = 30 //updated in 2020/07/15
+//versions.buildTools = "29.0.3"
+versions.buildTools = "30.0.3" //updated in 2020/12/09
+
+deps.versions = versions
+
+///
+
+def ieBuildConfig = [:]
+
+def bcType = [:]
+bcType.boolean = "boolean"
+bcType.string = "String"
+bcType.long = "long"
+
+def bcKey = [:]
+bcKey.debugMode = "DEBUG_MODE"
+bcKey.tmdbApiKey = "TMDB_API_KEY"
+bcKey.facebookAppId = "FACEBOOK_APP_IDfacebook_app_id"
+bcKey.facebookLoginProtocol = "FB_LOGIN_PROTOCOL_SCHEME"
+bcKey.twitterConsumerKey = "TWITTER_CONSUMER_KEY"
+bcKey.twitterConsumerSecret ="TWITTER_CONSUMER_SECRET"
+bcKey.googleServerClientId ="GOOGLE_SERVER_CLIENT_ID"
+
+def bcValue = [:]
+bcValue.true = "true"
+bcValue.false = "false"
+
+ieBuildConfig.types = bcType
+ieBuildConfig.keys = bcKey
+ieBuildConfig.values = bcValue
+
+deps.ieBuildConfig = ieBuildConfig
+
+///
+
+def ieAppResource = [:]
+
+def arType = [:]
+arType.string = "string"
+
+def arKey = [:]
+arKey.appVersion = "app_version"
+arKey.tmdbApiKey = "tmdb_api_key"
+arKey.appVersion = "app_version"
+arKey.facebookAppId = "facebook_app_id"
+arKey.facebookLoginProtocol = "fb_login_protocol_scheme"
+arKey.twitterConsumerKey = "twitter_consumer_key"
+arKey.twitterConsumerSecret ="twitter_consumer_secret"
+arKey.googleServerClientId ="google_server_client_id"
+
+ieAppResource.types = arType
+ieAppResource.keys = arKey
+
+deps.ieAppResource = ieAppResource
+
+ext.deps = deps
+
