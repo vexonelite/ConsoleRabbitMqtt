@@ -1,3 +1,5 @@
+package programs;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,5 +19,5 @@ public final class IeApiResponse<T>  {
 
     @NotNull
     @Override
-    public String toString() { return "IeApiResponse {result: " + result + ", error: " + error + "}"; }
+    public String toString() { return "programs.IeApiResponse {result: " + result + ", error: " + error + "}"; }
 }

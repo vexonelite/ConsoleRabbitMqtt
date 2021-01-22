@@ -1,3 +1,5 @@
+package programs;
+
 import com.rabbitmq.client.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -19,7 +21,7 @@ public final class RabbitMqHelper {
             return new IeApiResponse<>(connection, null);
         }
         catch (Exception cause) {
-            java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.SEVERE, "Error on ConnectionFactory#newConnection(): " + cause.getLocalizedMessage());
+            java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.SEVERE, "Error on ConnectionFactory#newConnection(): " + cause.getLocalizedMessage());
             final IeRuntimeException error = new IeRuntimeException(cause, AppConstants.RabbitMqErrorCode.NEW_CONNECTION);
             return new IeApiResponse<>(null, error);
         }
@@ -32,7 +34,7 @@ public final class RabbitMqHelper {
             return new IeApiResponse<>(channel, null);
         }
         catch (Exception cause) {
-            java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.SEVERE, "Error on Connection#createChannel(): " + cause.getLocalizedMessage());
+            java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.SEVERE, "Error on Connection#createChannel(): " + cause.getLocalizedMessage());
             final IeRuntimeException error = new IeRuntimeException(cause, AppConstants.RabbitMqErrorCode.CREATE_CHANNEL);
             return new IeApiResponse<>(null, error);
         }
@@ -46,7 +48,7 @@ public final class RabbitMqHelper {
             return new IeApiResponse<>(true, null);
         }
         catch (Exception cause) {
-            java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.SEVERE, "Error on Channel#queueDeclare(): " + cause.getLocalizedMessage());
+            java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.SEVERE, "Error on Channel#queueDeclare(): " + cause.getLocalizedMessage());
             final IeRuntimeException error = new IeRuntimeException(cause, AppConstants.RabbitMqErrorCode.QUEUE_DECLARATION);
             return new IeApiResponse<>(null, error);
         }
@@ -64,7 +66,7 @@ public final class RabbitMqHelper {
             return new IeApiResponse<>(true, null);
         }
         catch (Exception cause) {
-            java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.SEVERE, "Error on Channel#basicPublish(): " + cause.getLocalizedMessage());
+            java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.SEVERE, "Error on Channel#basicPublish(): " + cause.getLocalizedMessage());
             final IeRuntimeException error = new IeRuntimeException(cause, AppConstants.RabbitMqErrorCode.CHANNEL_PUBLISH);
             return new IeApiResponse<>(null, error);
         }
@@ -99,7 +101,7 @@ public final class RabbitMqHelper {
             return new IeApiResponse<>(true, null);
         }
         catch (Exception cause) {
-            java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.SEVERE, "Error on Channel#basicConsume(): " + cause.getLocalizedMessage());
+            java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.SEVERE, "Error on Channel#basicConsume(): " + cause.getLocalizedMessage());
             final IeRuntimeException error = new IeRuntimeException(cause, AppConstants.RabbitMqErrorCode.CHANNEL_CONSUME);
             return new IeApiResponse<>(null, error);
         }
@@ -186,24 +188,24 @@ public final class RabbitMqHelper {
             final ConnectionFactory factory = new ConnectionFactory();
             // "guest"/"guest" by default, limited to localhost connections
             if ( (null != userName) && (null != password) ) {
-                java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.INFO,
+                java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.INFO,
                         "ConnectionFactoryBuilder - userName: [" + userName + "], password: [" + password + "]");
                 factory.setUsername(userName);
                 factory.setPassword(password);
             }
             if (null != virtualHost) {
-                java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.INFO,
+                java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.INFO,
                         "ConnectionFactoryBuilder - virtualHost: [" + virtualHost + "]");
                 factory.setVirtualHost(virtualHost);
             }
             if (null != hostName) {
-                java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.INFO,
+                java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.INFO,
                         "ConnectionFactoryBuilder - hostName: [" + hostName + "]");
                 factory.setHost(hostName);
             }
 
             if (portNumber > 0) {
-                java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.INFO,
+                java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.INFO,
                         "ConnectionFactoryBuilder - portNumber: [" + portNumber + "]");
                 factory.setPort(portNumber);
             }
@@ -214,7 +216,7 @@ public final class RabbitMqHelper {
     public static final class DefaultCancelCallback implements CancelCallback {
         @Override
         public void handle(String consumerTag) throws IOException {
-            java.util.logging.Logger.getLogger("RabbitMqHelper").log(Level.INFO,
+            java.util.logging.Logger.getLogger("programs.RabbitMqHelper").log(Level.INFO,
                     "DefaultCancelCallback - consumerTag: [" + consumerTag + "]");
         }
     }

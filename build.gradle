@@ -21,12 +21,19 @@ dependencies {
     // Kotlin coroutines
     //implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${deps.versions.kotlinCoroutines}"
 
+    // RxJava 2.X
+    implementation "io.reactivex.programs.rxjava2:rxjava:${deps.versions.rxJava2}"
+
+    // https://www.rabbitmq.com/api-guide.html
     implementation "com.rabbitmq:amqp-client:5.10.0"
 
 //    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
 //    testCompile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
     implementation "org.slf4j:slf4j-api:1.7.26"
     testImplementation "org.slf4j:slf4j-simple:1.7.26"
+
+    // https://hivemq.github.io/hivemq-mqtt-client/docs/quick-start/
+    implementation "com.hivemq:hivemq-mqtt-client:1.2.1"
 }
 
 compileKotlin {

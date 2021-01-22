@@ -1,3 +1,5 @@
+package programs;
+
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -21,7 +23,7 @@ public final class RabbitMqSender {
         if (null != connectionResponse.error) { return; }
         final Connection connection = connectionResponse.result;
         if (null == connection) {
-            java.util.logging.Logger.getLogger("RabbitMqSender").log(Level.SEVERE, "init - connection is null!!");
+            java.util.logging.Logger.getLogger("programs.RabbitMqReceiver").log(Level.SEVERE, "init - connection is null!!");
             return;
         }
 
@@ -29,7 +31,7 @@ public final class RabbitMqSender {
         if (null != channelResponse.error) { return; }
         final Channel channel = channelResponse.result;
         if (null == channel) {
-            java.util.logging.Logger.getLogger("RabbitMqSender").log(Level.SEVERE, "init - channel is null!!");
+            java.util.logging.Logger.getLogger("programs.RabbitMqReceiver").log(Level.SEVERE, "init - channel is null!!");
             return;
         }
         this.channel = channel;
@@ -38,11 +40,7 @@ public final class RabbitMqSender {
         final IeApiResponse<Boolean> queueDeclarationResponse = rabbitMqHelper.queueDeclare(this.channel, parameter);
         if (null != queueDeclarationResponse.error) { return; }
 
-        final String message = String.valueOf(System.currentTimeMillis());
         final IeApiResponse<Boolean> publishResponse = rabbitMqHelper.basicPublish(
-                channel, "", AppConstants.QUEUE_NAME, message, null);
-        java.util.logging.Logger.getLogger("RabbitMqSender").log(Level.INFO, "init - publish: [" + message + "]");
-
-        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+                channel, "", AppConstants.QUEUE_NAME, "aA1234567890", null);
     }
 }
