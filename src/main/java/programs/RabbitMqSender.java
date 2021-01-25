@@ -23,7 +23,7 @@ public final class RabbitMqSender {
         if (null != connectionResponse.error) { return; }
         final Connection connection = connectionResponse.result;
         if (null == connection) {
-            java.util.logging.Logger.getLogger("programs.RabbitMqReceiver").log(Level.SEVERE, "init - connection is null!!");
+            java.util.logging.Logger.getLogger("RabbitMqReceiver").log(Level.SEVERE, "init - connection is null!!");
             return;
         }
 
@@ -31,7 +31,7 @@ public final class RabbitMqSender {
         if (null != channelResponse.error) { return; }
         final Channel channel = channelResponse.result;
         if (null == channel) {
-            java.util.logging.Logger.getLogger("programs.RabbitMqReceiver").log(Level.SEVERE, "init - channel is null!!");
+            java.util.logging.Logger.getLogger("RabbitMqReceiver").log(Level.SEVERE, "init - channel is null!!");
             return;
         }
         this.channel = channel;
